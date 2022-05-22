@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/web_admin/web/style_admin.css">
+
+  <title>One Page</title>
+</head>
+
+<body>
+  <div class="header-main">
+
+    <div class="topnav" id="myTopnav">
+      <a href="/web/index.html" class="item-menu" onClick="document.getElementById('produtos').scrollIntoView();" class="">Produtos</a>
+      <a class="item-menu" href="#news">Admin</a>
+      <a class="item-menu" href="/web_admin/web/index_admin.html">( ͡❛ ͜ʖ ͡❛)</a>
+
+      <div class="botao">
+        <a href="#" class="icon" onclick="myFunction()"></a>
+      </div>
+
+    </div>
+
+    <div class="header">
+
+      <div class="intro">
+        <img src="/image/logo.png" style="border-radius: 50px;" alt="">
+
+        <p class="intro-desc">AS MAIS SABOROSAS TORTAS PARA QUALQUER HORA E EM QUALQUER OCASIÃO.</p>
+
+        <input disabled type="button" class="intro-btn" value="Administradora" href="#" onClick="document.getElementById('footer_').scrollIntoView();" />
+      </div>
+
+      <img class="intro-img" src="/image/3Is7.gif" alt="">
+
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="tela" id="">
+      <div class="col">
+
+        <label id="first-label" for="investimento-input">Valor investido</label>
+        <input type="number" name="" id="investimento-input">
+
+        <label for="data-input">Data das entradas</label>
+        <input id="data-input" type="date" name="">
+
+        <label for="input1">Produto</label>
+        <!-- <input type="text" id="input1" class="campo" placeholder="Produto"> -->
+        <select id="input1" name="produtos">
+          <option value="" id="v0">Selecione o produto</option>
+          <option value="Torta Ouro Branco" id="v1">Torta Ouro Branco</option>
+
+          <option value="Torta Moranguinho" id="v2">Torta Moranguinho</option>
+
+          <option value="Torta Gelada" id="v3">Torta Gelada</option>
+
+          <option value="Chocolatuda" id="v4">Chocolatuda</option>
+
+          <option value="Torta Romeu e Julieta" id="v5">Torta Romeu e Julieta</option>
+
+        </select>
+      </div>
+
+      <div class="col">
+        <label for="input2">Quantidade</label>
+        <input type="number" id="input2" class="campo" placeholder="Quantidade">
+      </div>
+
+      <div class="col">
+        <label for="input3">Valor Uni</label>
+        <input type="number" disabled id="input3" class="campo" placeholder="Valor Unitario">
+      </div>
+
+      <div class="col">
+        <label for="input4">Valor total</label>
+        <input type="number" disabled id="input4" class="campo" placeholder="Total">
+      </div>
+
+      <div class="col">
+        <button onclick="TrazerInputs()">+</button>
+      </div>
+
+      <h2 id="titulo-produtos">Caixa</h2>
+
+      <div id="div-lista-produtos">
+        <ul id="lista-produtos">
+          <li class="item-produtos">Produto</li>
+          <li class="item-produtos">Quantidade</li>
+          <li class="item-produtos">ValorUni</li>
+          <li class="item-produtos">Total</li>
+        </ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+      </div>
+
+    </div>
+
+    <div class="caixa-diario">
+
+      <button onclick="Finalizar_dia()">Finalizar</button>
+
+      <p id="res"></p>
+
+      <div id="btn-relatorios">
+
+        <button id="btn-gerar" onclick="AlimentarTabela()">Visualizar</button>
+
+        <button id="btn-download" onclick="exportData()">Excel</button>
+      </div>
+
+    </div>
+
+    <div id="table-resultados">
+      <table id="table"></table>
+    </div>
+
+    <div class="footer" id="footer_">
+      <p class="direitos">Gsgomes. Alguns direitos reservados.</p>
+    </div>
+
+  </div>
+
+  <script src="/web_admin/web/script_admin.js"></script>
+
+  <script type="text/javascript" src="/web_admin/downloadFile.js"></script>
+
+</body>
+
+</html>

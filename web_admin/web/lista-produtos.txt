@@ -1,0 +1,20 @@
+ <div id="div-lista-produtos">
+        <ul id="lista-produtos">
+          <li class="item-produtos">Produto</li>
+          <li class="item-produtos">Quantidade</li>
+          <li class="item-produtos">ValorUni</li>
+          <li class="item-produtos">Total</li>
+        </ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+        <ul class="lista-produtos-new"></ul>
+      </div>
+
+    </div>

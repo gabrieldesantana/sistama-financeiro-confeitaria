@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>One Page</title>
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="item-menu">Produtos</a>
+    <a class="item-menu" onclick="ValidaPermissao()" id="menu-admin">Admin</a>
+    <a class="item-menu" href="#contact" onClick="document.getElementById('footer_').scrollIntoView();">Contato</a>
+
+    <div class="botao">
+
+      <a href="#" class="icon" onclick="myFunction()"></a>
+
+    </div>
+  </div>
+
+  <div class="header">
+
+    <div class="intro">
+      <img src="/image/logo.png" style="border-radius: 50px;" alt="">
+
+      <p class="intro-desc">AS MAIS SABOROSAS TORTAS PARA QUALQUER HORA E EM QUALQUER OCASIÃO.</p>
+
+      <input type="button" class="intro-btn" value="Contato" href="#" onClick="document.getElementById('footer_').scrollIntoView();" />
+    </div>
+
+    <img class="intro-img" src="/image/3Is7.gif" alt="">
+
+  </div>
+
+  <div class="main" id="produtos">
+
+    <div class="catalogo">
+
+      <div class="card">
+        <img src="/image/torta-ouro_branco.png" alt="">
+        <div class="info">
+          <h2>Ouro Branco</h2>
+          <p>Um deliciosa torta de Ouro Branco</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/image/torta-moranguinho.png" alt="">
+        <div class="info">
+          <h2>Moranguinho</h2>
+          <p>Um deliciosa torta de morango</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/image/torta-torta_gelada.png" alt="">
+        <div class="info">
+          <h2>Torta Gelada</h2>
+          <p>Uma deliciosa torta gelada</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/image/torta_chocolatuda.png" alt="">
+        <div class="info">
+          <h2>Chocolatuda</h2>
+          <p>Uma deliciosa torta recheadissima com chocolate</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/image/torta-romeu_e_julieta.png" alt="">
+        <div class="info">
+          <h2>Romeu e Julieta</h2>
+          <p>Uma deliciosa torta de chocolate</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer" id="footer_">
+
+    <h2>Entre em contato</h2>
+
+      <div class="form-info">
+
+        <input class="" type="text" id="nome" placeholder="Seu nome">
+
+        <input type="tel" id="tele"
+        onmouseleave="Wpp()" placeholder="Seu telefone com DDD">
+
+        <a id="enviar" value="Enviar Mensagem" onclick="Wpp()" target="_blank">Fazer Encomenda</a>
+
+      </div>
+
+    <p class="direitos">Gsgomes. Alguns direitos reservados.</p>
+
+  </div>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="/web/script.js"></script>
+</body>
+
+</html>
