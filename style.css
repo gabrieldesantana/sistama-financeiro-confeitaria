@@ -439,7 +439,7 @@ select {
   .topnav a.icon {
     display: block;
     padding: 15px;
-    background-image: url("/image/cookie-solid.svg");
+    background-image: url("./image/cookie-solid.svg");
     margin-top: 20px;
   }
 }
