@@ -29,7 +29,7 @@ function ValidaPermissao() {
 
   if (foo == "admin") {
     console.log(foo);
-    admin.setAttribute("href", "./web_admin/web/index_admin.html");
+    admin.setAttribute("href", "./index_admin.html");
   } else if (foo != "admin") {
     window.alert("Senha incorreta :(");
   }
