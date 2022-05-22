@@ -233,7 +233,7 @@ function AlimentarTabela() {
   if (validador) {
     var dados = dados_tabela;
   } else {
-    window.alert("Nennhuma informação foi inserida");
+    window.alert("Nenhuma informação foi inserida");
   }
 
   var table = document.getElementById("table");
