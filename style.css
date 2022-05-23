@@ -58,15 +58,15 @@ input:focus {
 
 @font-face {
   font-family: Lato-Regular;
-  src: url("/fontes/Lato-Regular.ttf");
+  src: url("./fontes/Lato-Regular.ttf");
 }
 @font-face {
   font-family: Merriweather-Regular;
-  src: url("/fontes/Merriweather-Regular.ttf");
+  src: url("./fontes/Merriweather-Regular.ttf");
 }
 @font-face {
   font-family: Merriweather-Bold;
-  src: url("/fontes/Merriweather-Bold.ttf");
+  src: url("./fontes/Merriweather-Bold.ttf");
 }
 
 /*Codigo*/

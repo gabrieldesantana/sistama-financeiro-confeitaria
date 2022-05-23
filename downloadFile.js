@@ -35,7 +35,7 @@ function exportData() {
   var encodedUri = encodeURI(csvContent);
   var link = document.createElement("a");
   link.setAttribute("href", encodedUri);
-  link.setAttribute("download", "Relatório_Semanal.csv");
+  link.setAttribute("download", "Relatorio_Semanal.csv");
   document.body.appendChild(link);
   /* download the data file named "Stock_Price_Report.csv" */
   link.click();
