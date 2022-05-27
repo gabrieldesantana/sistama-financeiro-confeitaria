@@ -31,7 +31,7 @@
 
         <p class="intro-desc">AS MAIS SABOROSAS TORTAS PARA QUALQUER HORA E EM QUALQUER OCASIÃO.</p>
 
-        <input disabled type="button" class="intro-btn" value="Administradora" href="#" onClick="document.getElementById('footer_').scrollIntoView();" />
+        <input type="button" class="intro-btn" value="Administradora" href="#" />
       </div>
 
       <img class="intro-img" src="./image/3Is7.gif" alt="">
@@ -43,6 +43,18 @@
     <div class="tela" id="">
       <div class="col">
 
+        <div id="pie-screen">
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+        </div>
+
+        <label for="tortas-input">Tortas Feitas</label>
+        <input type="number" onmouseleave="DesenharTorta()" id="tortas-input">
+
         <label id="first-label" for="investimento-input">Valor investido</label>
         <input type="number" name="" id="investimento-input">
 
@@ -50,18 +62,17 @@
         <input id="data-input" type="date" name="">
 
         <label for="input1">Produto</label>
-        <!-- <input type="text" id="input1" class="campo" placeholder="Produto"> -->
         <select id="input1" name="produtos">
           <option value="" id="v0">Selecione o produto</option>
-          <option value="Torta Ouro Branco" id="v1">Torta Ouro Branco</option>
+          <option value="Fatia da Ouro Branco" id="v1">Fatia da Ouro Branco</option>
 
-          <option value="Torta Moranguinho" id="v2">Torta Moranguinho</option>
+          <option value="Fatia da Moranguinho" id="v2">Fatia da Moranguinho</option>
 
-          <option value="Torta Gelada" id="v3">Torta Gelada</option>
+          <option value="Fatia da Torta Gelada" id="v3">Fatia da Torta Gelada</option>
 
-          <option value="Chocolatuda" id="v4">Chocolatuda</option>
+          <option value="Fatia da Chocolatuda" id="v4">Fatia da Chocolatuda</option>
 
-          <option value="Torta Romeu e Julieta" id="v5">Torta Romeu e Julieta</option>
+          <option value="Fatia da Romeu e Julieta" id="v5">Fatia da Romeu e Julieta</option>
 
         </select>
       </div>
