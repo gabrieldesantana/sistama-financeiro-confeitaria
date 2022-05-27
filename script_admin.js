@@ -63,6 +63,12 @@ function TrazerInputs() {
   let inp1 = document.getElementById("input1").value;
   let inp2 = document.getElementById("input2").value;
 
+  if (inp2 > contFatias) {
+    console.log("Quantidade maior que estoque");
+    window.alert("Quantidade maior que estoque, recomeçando...");
+    document.location.reload(true);
+  }
+
   let v1 = document.getElementById("v1");
   let v2 = document.getElementById("v2");
   let v3 = document.getElementById("v3");
@@ -73,7 +79,9 @@ function TrazerInputs() {
     document.getElementById("input1").value == "" ||
     document.getElementById("input2").value == ""
   ) {
-    window.alert("Favor preencher todos os campos");
+    // window.alert("Favor preencher todos os campos");
+    window.alert("Favor preencher todos os campos, recomeçando...");
+    document.location.reload(true);
   } else {
     validador = true;
   }
@@ -199,7 +207,7 @@ function Finalizar_dia() {
 
   ManipularDados();
   ajax();
-  contTortas = 0
+  contTortas = 0;
   ajax2();
 
   LimparTodosCampos();
@@ -257,7 +265,7 @@ function ManipularDados() {
   });
 
   dadosTemp.push(lucro);
-  dadosTemp.push(TortasNaoVendidas)
+  dadosTemp.push(TortasNaoVendidas);
   dados_tabela.push(dadosTemp);
   dadosTemp = [];
 }
@@ -282,7 +290,7 @@ function AlimentarTabela() {
 
   for (i = 0; i < dados_tabela.length; i++) {
     table = table + "<tr>";
-    table = table + "<td>" + dados[i][0] + "</td>"; 
+    table = table + "<td>" + dados[i][0] + "</td>";
     table = table + "<td>" + dados[i][1] + "</td>"; //i2
     table = table + "<td>" + dados[i][2] + "</td>"; //i1
     table = table + "<td>" + dados[i][3] + "</td>"; //i2
@@ -299,39 +307,69 @@ function AlimentarTabela() {
   table = "";
 }
 
-window.onload = () => {console.log("Iniciando")}
-var contTortas = 0
+window.onload = () => {
+  console.log("Iniciando");
+};
 
-function DesenharTorta()
-{
+var contTortas = 0;
+var contFatias = 0;
+
+function DesenharTorta() {
   var numeroTortas = document.getElementById("tortas-input").value;
-  contTortas+=1
+  contTortas += 1;
 
-  var numeroFatias = 10 // pode alterar
-  if (contTortas == 1)
-  {
-    for (let i=0;i<numeroTortas;i++)
-    {
-      for (let j=0;j<numeroFatias;j++) {
-        var img = document.createElement('img');
-        img.src = './image/icon-pie.png';
-        document.getElementsByClassName('flex-pie')[i].appendChild(img);
+  var numeroFatias = 10; // pode alterar
+  if (contTortas == 1) {
+    for (let i = 0; i < numeroTortas; i++) {
+      for (let j = 0; j < numeroFatias; j++) {
+        var img = document.createElement("img");
+        img.src = "./image/icon-pie.png";
+        document.getElementsByClassName("flex-pie")[i].appendChild(img);
+        contFatias += 1;
       }
     }
-  }
-  else if (contTortas > 1)
-  {
-    console.log("Numero de tortas já informado")
+
+    console.log("Fatias colocadas: " + contFatias);
+    // FatiasRestantes(contFatias)
+  } else if (contTortas > 1) {
+    console.log("Numero de tortas já informado");
+    // DesenharTorta2() --
   }
 }
 
-function LimparTodosCampos()
-{
-  var inputTortas = document.getElementById("tortas-input").value = "";
-  var inputValor = document.getElementById("investimento-input").value = "";
-  var inputData = document.getElementById("data-input").value = "";
-  var inputProduto = document.getElementById("input1").value = "";
-  var inputQuantidade = document.getElementById("input2").value = "";
-  var inputValorUni = document.getElementById("input3").value = "";
-  var inputValorTotal = document.getElementById("input4").value = "";
+// function FatiasRestantes() {
+
+//   let quantiFatias = document.getElementById("input2").value;
+
+//   console.log("quantidade fatias: " + quantiFatias);
+
+//   var fatiasAtual = contFatias;
+
+//   console.log("Result: " + quantiFatias - fatiasAtual);
+// }
+
+// function DesenharTorta2() {
+// ajax2()
+
+// var numeroFatias = 111
+
+// // ajax2()
+
+// for (let i = 0; i < numeroFatias; i++) {
+//   var img = document.createElement("img");
+//   img.src = "./image/icon-pie.png";
+//   document.getElementsByClassName("flex-pie")[1].appendChild(img);
+// }
+
+// console.log("Fatias colocadas: " + contFatias);
+// }
+
+function LimparTodosCampos() {
+  var inputTortas = (document.getElementById("tortas-input").value = "");
+  var inputValor = (document.getElementById("investimento-input").value = "");
+  var inputData = (document.getElementById("data-input").value = "");
+  var inputProduto = (document.getElementById("input1").value = "");
+  var inputQuantidade = (document.getElementById("input2").value = "");
+  var inputValorUni = (document.getElementById("input3").value = "");
+  var inputValorTotal = (document.getElementById("input4").value = "");
 }

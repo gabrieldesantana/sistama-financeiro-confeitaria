@@ -443,7 +443,10 @@ select {
     padding: 15px;
     /* background-image: url("./image/cookie-solid.svg"); */
     background-image: url("./image/bars-solid.svg");
+    background-repeat: no-repeat;
     margin-top: 20px;
+    border-top-right-radius: 0px;
+    /* border-top-left-radius: 50px; */
   }
 }
 
