@@ -467,13 +467,30 @@ td {
   color: #f2f2f2;
   text-align: center;
   align-self: center;
+
   border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
+  /* border-top-left-radius: 50px; */
+
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   padding: 10px 10px;
   text-decoration: none;
   font-size: 17px;
 }
+
+/* .topnav a:first-child
+{
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  align-self: center;
+
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  font-size: 17px;
+} */
 
 .topnav .item-menu {
   transition: 0.3s;
@@ -504,7 +521,7 @@ td {
   .topnav a.icon {
     display: block;
     padding: 15px;
-    background-image: url("./image/cookie-solid.svg");
+    background-image: url("./image/bars-solid.svg");
     margin-top: 20px;
   }
 }

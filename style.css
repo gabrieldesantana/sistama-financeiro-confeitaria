@@ -398,7 +398,7 @@ select {
   align-self: center;
 
   border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
+  /* border-top-left-radius: 50px; */
 
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 
@@ -441,7 +441,8 @@ select {
   .topnav a.icon {
     display: block;
     padding: 15px;
-    background-image: url("./image/cookie-solid.svg");
+    /* background-image: url("./image/cookie-solid.svg"); */
+    background-image: url("./image/bars-solid.svg");
     margin-top: 20px;
   }
 }
