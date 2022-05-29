@@ -58,10 +58,17 @@ var validador = false;
 var total = 0;
 
 // Funcoes Custom
+var listaQuanti = [];
+
+var validInputQuanti = 0;
 
 function TrazerInputs() {
   let inp1 = document.getElementById("input1").value;
   let inp2 = document.getElementById("input2").value;
+
+
+
+  document.getElementById("pie-remaining").style.display = "block";
 
   if (inp2 > contFatias) {
     console.log("Quantidade maior que estoque");
@@ -79,7 +86,6 @@ function TrazerInputs() {
     document.getElementById("input1").value == "" ||
     document.getElementById("input2").value == ""
   ) {
-    // window.alert("Favor preencher todos os campos");
     window.alert("Favor preencher todos os campos, recomeçando...");
     document.location.reload(true);
   } else {
@@ -91,18 +97,21 @@ function TrazerInputs() {
     var total = inp2 * inp3;
     var inp4 = (document.getElementById("input4").value = total);
     ManipularLista(inp1, inp2, inp3, inp4);
+    listaQuanti.push(parseInt(inp2));
   }
   if (v2.selected) {
     let inp3 = (document.getElementById("input3").value = 12);
     var total = inp2 * inp3;
     var inp4 = (document.getElementById("input4").value = total);
     ManipularLista(inp1, inp2, inp3, inp4);
+    listaQuanti.push(parseInt(inp2));
   }
   if (v3.selected) {
     let inp3 = (document.getElementById("input3").value = 12);
     var total = inp2 * inp3;
     var inp4 = (document.getElementById("input4").value = total);
     ManipularLista(inp1, inp2, inp3, inp4);
+    listaQuanti.push(parseInt(inp2));
   }
 
   if (v4.selected) {
@@ -110,6 +119,7 @@ function TrazerInputs() {
     var total = inp2 * inp3;
     var inp4 = (document.getElementById("input4").value = total);
     ManipularLista(inp1, inp2, inp3, inp4);
+    listaQuanti.push(parseInt(inp2));
   }
 
   if (v5.selected) {
@@ -117,6 +127,7 @@ function TrazerInputs() {
     var total = inp2 * inp3;
     var inp4 = (document.getElementById("input4").value = total);
     ManipularLista(inp1, inp2, inp3, inp4);
+    listaQuanti.push(parseInt(inp2));
   }
 }
 
@@ -161,7 +172,7 @@ function Adicionar(item1, item2, item3, item4) {
 
   var lista =
     document.getElementsByClassName("lista-produtos-new")[cont_i].innerHTML;
-  // }
+
   lista = lista + "<p>" + "Produto:" + "</p>";
   lista = lista + "<li>" + item1 + "</li>";
   lista = lista + "<p>" + "Quantidade:" + "</p>";
@@ -183,20 +194,29 @@ function Adicionar(item1, item2, item3, item4) {
 }
 
 function Finalizar_dia() {
+  listaQuanti = []
+
   for (i = 0; i < db.length; i++) {
     total += db[i][3];
   }
-
-  var campo_data = document.getElementById("data-input");
 
   total = total.toLocaleString("pt-BR", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
 
+
+  var campo_data = document.getElementById("data-input");
+  var dataCompleta = campo_data.value;
+  let day = dataCompleta.slice(8, 10);
+  let month = dataCompleta.slice(5, 7);
+  let year = dataCompleta.slice(0, 4);
+  var dataFormatada = `${day}/${month}/${year}`;
+
+
   var total_data = (document.getElementById(
     "res"
-  ).innerHTML = `${total} : ${campo_data.value}`);
+  ).innerHTML = `${total} : ${dataFormatada}`);
 
   total = 0;
   db_total.push(total_data);
@@ -208,9 +228,15 @@ function Finalizar_dia() {
   ManipularDados();
   ajax();
   contTortas = 0;
+  contFatias = 0
   ajax2();
 
   LimparTodosCampos();
+
+  // document.getElementById("pie-remaining").style.display = "none";
+  document.getElementById("ver-torta").style.display = "none";
+
+
 }
 
 function ManipularDados() {
@@ -291,10 +317,10 @@ function AlimentarTabela() {
   for (i = 0; i < dados_tabela.length; i++) {
     table = table + "<tr>";
     table = table + "<td>" + dados[i][0] + "</td>";
-    table = table + "<td>" + dados[i][1] + "</td>"; //i2
-    table = table + "<td>" + dados[i][2] + "</td>"; //i1
-    table = table + "<td>" + dados[i][3] + "</td>"; //i2
-    table = table + "<td>" + dados[i][4] + "</td>"; //i2
+    table = table + "<td>" + dados[i][1] + "</td>"; 
+    table = table + "<td>" + dados[i][2] + "</td>"; 
+    table = table + "<td>" + dados[i][3] + "</td>"; 
+    table = table + "<td>" + dados[i][4] + "</td>"; 
     table = table + "</tr>";
   }
 
@@ -307,14 +333,14 @@ function AlimentarTabela() {
   table = "";
 }
 
-window.onload = () => {
-  console.log("Iniciando");
-};
-
 var contTortas = 0;
 var contFatias = 0;
 
 function DesenharTorta() {
+
+  setInterval(function(){UpdateQuant()}, 1500);
+  document.getElementById("ver-torta").style.display = "block";
+
   var numeroTortas = document.getElementById("tortas-input").value;
   contTortas += 1;
 
@@ -330,39 +356,10 @@ function DesenharTorta() {
     }
 
     console.log("Fatias colocadas: " + contFatias);
-    // FatiasRestantes(contFatias)
   } else if (contTortas > 1) {
     console.log("Numero de tortas já informado");
-    // DesenharTorta2() --
   }
 }
-
-// function FatiasRestantes() {
-
-//   let quantiFatias = document.getElementById("input2").value;
-
-//   console.log("quantidade fatias: " + quantiFatias);
-
-//   var fatiasAtual = contFatias;
-
-//   console.log("Result: " + quantiFatias - fatiasAtual);
-// }
-
-// function DesenharTorta2() {
-// ajax2()
-
-// var numeroFatias = 111
-
-// // ajax2()
-
-// for (let i = 0; i < numeroFatias; i++) {
-//   var img = document.createElement("img");
-//   img.src = "./image/icon-pie.png";
-//   document.getElementsByClassName("flex-pie")[1].appendChild(img);
-// }
-
-// console.log("Fatias colocadas: " + contFatias);
-// }
 
 function LimparTodosCampos() {
   var inputTortas = (document.getElementById("tortas-input").value = "");
@@ -372,4 +369,23 @@ function LimparTodosCampos() {
   var inputQuantidade = (document.getElementById("input2").value = "");
   var inputValorUni = (document.getElementById("input3").value = "");
   var inputValorTotal = (document.getElementById("input4").value = "");
+}
+
+window.onload = () => {
+  console.log("Iniciando")
+};
+
+
+function UpdateQuant() {
+  let sum = 0;
+  for (let i = 0; i < listaQuanti.length; i++) {
+    sum += listaQuanti[i];
+    // console.log("Soma " + sum)
+  }
+
+  var restante = document.getElementById("pie-remaining");
+  var contAtual = contFatias - sum;
+
+  // restante.innerHTML = contFatias - sum;
+  restante.innerHTML = `${contFatias - sum} Fatias`;
 }

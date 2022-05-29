@@ -533,6 +533,11 @@ td {
     color: var(--white);
     border-radius: 4px;
   }
+
+  #pie-remaining
+  {
+    font-size: 1.5rem;
+  }
 }
 
 .botao .icon {
@@ -547,10 +552,26 @@ td {
   display: block;
 }
 
+.pie-cont-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #pie-screen {
   align-self: center;
   /* background: #e21; */
   padding: 20px;
+}
+
+.show-pie {
+  align-self: center;
+}
+.show-pie p {
+  font-size: 32px;
+  color: #aa68b3;
+  background: #fff;
+  border-radius: 4px;
 }
 
 .flex-pie {

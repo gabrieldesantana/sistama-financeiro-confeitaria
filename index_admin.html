@@ -31,7 +31,7 @@
 
         <p class="intro-desc">AS MAIS SABOROSAS TORTAS PARA QUALQUER HORA E EM QUALQUER OCASIÃO.</p>
 
-        <input type="button" class="intro-btn" value="Administradora" href="#" />
+        <input type="button" onclick="UpdateQuant()" class="intro-btn" value="Administradora" href="#" />
       </div>
 
       <img class="intro-img" src="./image/3Is7.gif" alt="">
@@ -43,18 +43,26 @@
     <div class="tela" id="">
       <div class="col">
 
-        <div id="pie-screen">
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
-          <div class="flex-pie"></div>
+        <div class="pie-cont-screen">
+          <div id="pie-screen">
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+          </div>
+          <div class="show-pie" id="ver-torta">
+            <p id="pie-remaining"></p>
+          </div>
         </div>
+
+
+
 
         <label for="tortas-input">Tortas Feitas (10 fatias cada)</label>
         <input type="number" onmouseleave="DesenharTorta()" id="tortas-input">
