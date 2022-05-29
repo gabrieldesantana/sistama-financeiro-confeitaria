@@ -534,8 +534,7 @@ td {
     border-radius: 4px;
   }
 
-  #pie-remaining
-  {
+  #pie-remaining {
     font-size: 1.5rem;
   }
 }
@@ -560,13 +559,13 @@ td {
 
 #pie-screen {
   align-self: center;
-  /* background: #e21; */
   padding: 20px;
 }
 
 .show-pie {
   align-self: center;
 }
+
 .show-pie p {
   font-size: 32px;
   color: #aa68b3;
@@ -579,10 +578,13 @@ td {
   position: relative;
   max-width: 200px;
   flex-wrap: wrap;
+  border-radius: 4px;
 }
 
 .flex-pie img {
   max-width: 20px;
+  /* background-image: radial-gradient(red, yellow, green); */
+  border-radius: 50%;
 }
 
 .icon-pie {
@@ -591,33 +593,25 @@ td {
   top: 2px;
 }
 
-.flex-pie img:nth-child(1) {
-  left: 10px;
+#pie-remaining {
+  animation-name: pie-count;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
 }
-.flex-pie img:nth-child(2) {
-  left: 25px;
-}
-.flex-pie img:nth-child(3) {
-  left: 40px;
-}
-.flex-pie img:nth-child(4) {
-  left: 55px;
-}
-.flex-pie img:nth-child(5) {
-  left: 70px;
-}
-.flex-pie img:nth-child(6) {
-  left: 85px;
-}
-.flex-pie img:nth-child(7) {
-  left: 100px;
-}
-.flex-pie img:nth-child(8) {
-  left: 115px;
-}
-.flex-pie img:nth-child(9) {
-  left: 130px;
-}
-.flex-pie img:nth-child(10) {
-  left: 145px;
+
+@keyframes pie-count {
+  0% {
+    background-color: #fff;
+  }
+  25% {
+    background-color: #f4bcf4;
+  }
+  50% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #f4bcf4;
+  }
 }

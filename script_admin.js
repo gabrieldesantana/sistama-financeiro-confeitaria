@@ -66,8 +66,6 @@ function TrazerInputs() {
   let inp1 = document.getElementById("input1").value;
   let inp2 = document.getElementById("input2").value;
 
-
-
   document.getElementById("pie-remaining").style.display = "block";
 
   if (inp2 > contFatias) {
@@ -194,7 +192,7 @@ function Adicionar(item1, item2, item3, item4) {
 }
 
 function Finalizar_dia() {
-  listaQuanti = []
+  listaQuanti = [];
 
   for (i = 0; i < db.length; i++) {
     total += db[i][3];
@@ -205,14 +203,12 @@ function Finalizar_dia() {
     maximumFractionDigits: 2,
   });
 
-
   var campo_data = document.getElementById("data-input");
   var dataCompleta = campo_data.value;
   let day = dataCompleta.slice(8, 10);
   let month = dataCompleta.slice(5, 7);
   let year = dataCompleta.slice(0, 4);
   var dataFormatada = `${day}/${month}/${year}`;
-
 
   var total_data = (document.getElementById(
     "res"
@@ -228,15 +224,13 @@ function Finalizar_dia() {
   ManipularDados();
   ajax();
   contTortas = 0;
-  contFatias = 0
+  contFatias = 0;
   ajax2();
 
   LimparTodosCampos();
 
   // document.getElementById("pie-remaining").style.display = "none";
   document.getElementById("ver-torta").style.display = "none";
-
-
 }
 
 function ManipularDados() {
@@ -317,10 +311,10 @@ function AlimentarTabela() {
   for (i = 0; i < dados_tabela.length; i++) {
     table = table + "<tr>";
     table = table + "<td>" + dados[i][0] + "</td>";
-    table = table + "<td>" + dados[i][1] + "</td>"; 
-    table = table + "<td>" + dados[i][2] + "</td>"; 
-    table = table + "<td>" + dados[i][3] + "</td>"; 
-    table = table + "<td>" + dados[i][4] + "</td>"; 
+    table = table + "<td>" + dados[i][1] + "</td>";
+    table = table + "<td>" + dados[i][2] + "</td>";
+    table = table + "<td>" + dados[i][3] + "</td>";
+    table = table + "<td>" + dados[i][4] + "</td>";
     table = table + "</tr>";
   }
 
@@ -337,14 +331,16 @@ var contTortas = 0;
 var contFatias = 0;
 
 function DesenharTorta() {
-
-  setInterval(function(){UpdateQuant()}, 1500);
+  setInterval(function () {
+    UpdateQuant();
+  }, 1500);
   document.getElementById("ver-torta").style.display = "block";
 
   var numeroTortas = document.getElementById("tortas-input").value;
   contTortas += 1;
 
   var numeroFatias = 10; // pode alterar
+
   if (contTortas == 1) {
     for (let i = 0; i < numeroTortas; i++) {
       for (let j = 0; j < numeroFatias; j++) {
@@ -372,9 +368,8 @@ function LimparTodosCampos() {
 }
 
 window.onload = () => {
-  console.log("Iniciando")
+  console.log("Iniciando");
 };
-
 
 function UpdateQuant() {
   let sum = 0;

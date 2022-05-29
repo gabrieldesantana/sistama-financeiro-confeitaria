@@ -4,5 +4,16 @@
           <div class="flex-pie"></div>
           <div class="flex-pie"></div>
           <div class="flex-pie"></div>
+
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
+          <div class="flex-pie"></div>
           <div class="flex-pie"></div>
         </div>
