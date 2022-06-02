@@ -15,8 +15,8 @@
 
     <div class="topnav" id="myTopnav">
       <a href="./index.html" class="item-menu" onClick="document.getElementById('produtos').scrollIntoView();" class="">Produtos</a>
-      <a class="item-menu" href="#news">Admin</a>
-      <a class="item-menu" href="./index_admin.html">( ͡❛ ͜ʖ ͡❛)</a>
+      <a class="item-menu" href="#">Admin</a>
+      <a class="item-menu" href="./index_admin.html">❤❤❤</a>
 
       <div class="botao">
         <a href="#" class="icon" onclick="myFunction()"></a>
@@ -31,7 +31,8 @@
 
         <p class="intro-desc">AS MAIS SABOROSAS TORTAS PARA QUALQUER HORA E EM QUALQUER OCASIÃO.</p>
 
-        <input type="button" onclick="UpdateQuant()" class="intro-btn" value="Administradora" href="#" />
+        <input type="button" class="intro-btn" value="Administradora" href="#" />
+        <!-- onclick="criarlista()" -->
       </div>
 
       <img class="intro-img" src="./image/3Is7.gif" alt="">
@@ -63,6 +64,13 @@
             <div class="flex-pie"></div>
             <div class="flex-pie"></div>
             <div class="flex-pie"></div>
+
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+            <div class="flex-pie"></div>
+
           </div>
           <div class="show-pie" id="ver-torta">
             <p id="pie-remaining"></p>
@@ -78,12 +86,21 @@
         <label id="first-label" for="investimento-input">Valor investido</label>
         <input type="number" name="" id="investimento-input">
 
+        <!-- <div class="calculadora">
+          <input type="text" id="valor1"> *
+          <input type="text" id="valor2"> =
+          <input type="text"
+           id="result1">
+        </div> -->
+
         <label for="data-input">Data das entradas</label>
         <input id="data-input" type="date" name="">
 
         <label for="input1">Produto</label>
         <select id="input1" name="produtos">
-          <option value="" id="v0">Selecione o produto</option>
+
+          <option value="" disabled selected id="v0">Selecione o produto</option>
+
           <option value="Fatia da Ouro Branco" id="v1">Fatia da Ouro Branco</option>
 
           <option value="Fatia da Moranguinho" id="v2">Fatia da Moranguinho</option>
@@ -106,6 +123,12 @@
         <label for="input3">Valor Uni</label>
         <input type="number" disabled id="input3" class="campo" placeholder="Valor Unitario">
       </div>
+
+      <!-- <div id="lista-fatias">
+        <select id="select-fatias">
+          <option value="" disabled selected="">Selecione o produto</option>
+        </select>
+      </div> -->
 
       <div class="col">
         <label for="input4">Valor total</label>
@@ -141,7 +164,7 @@
 
     <div class="caixa-diario">
 
-      <button onclick="Finalizar_dia()">Finalizar</button>
+      <button onclick="Finalizar_dia()">Finalizar dia</button>
 
       <p id="res"></p>
 

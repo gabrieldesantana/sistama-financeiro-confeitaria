@@ -13,16 +13,11 @@ function exportData() {
     column2 = row.cells[1].innerText;
     column3 = row.cells[2].innerText;
     column4 = row.cells[3].innerText;
-    // column5 = row.cells[4].innerText;
+    column5 = row.cells[4].innerText;
+    column6 = row.cells[5].innerText;
 
     /* add a new records in the array */
-    rows.push([
-      column1,
-      column2,
-      column3,
-      column4,
-      // column5
-    ]);
+    rows.push([column1, column2, column3, column4, column5, column6]);
   }
   csvContent = "data:text/csv;charset=utf-8,";
   /* add the column delimiter as comma(,) and each row splitted by new line character (\n) */

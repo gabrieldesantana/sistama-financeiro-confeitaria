@@ -601,6 +601,22 @@ td {
   animation-direction: alternate-reverse;
 }
 
+
+/* .calculadora
+{
+  display: flex;
+  text-align: end;
+  color: #fff;
+  justify-content: center;
+  gap: 0 4px;
+} */
+
+/* .calculadora #valor1, #valor2, #result1, #calc
+{
+  width: 60px;
+  margin: 1px;
+} */
+
 @keyframes pie-count {
   0% {
     background-color: #fff;

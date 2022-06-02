@@ -286,6 +286,7 @@ function ManipularDados() {
 
   dadosTemp.push(lucro);
   dadosTemp.push(TortasNaoVendidas);
+  dadosTemp.push(numeroTortas);
   dados_tabela.push(dadosTemp);
   dadosTemp = [];
 }
@@ -301,20 +302,22 @@ function AlimentarTabela() {
 
   table = table + "<tr>";
   table = table + "<th>" + "Data" + "</th>";
+  table = table + "<th>" + "Num de tortas" + "</th>"; //new
   table = table + "<th>" + "Investimento" + "</th>";
   table = table + "<th>" + "Retorno" + "</th>";
   table = table + "<th>" + "Lucro/Prejuizo" + "</th>";
-  table = table + "<th>" + "Não Vendido" + "</th>";
+  table = table + "<th>" + "Perda" + "</th>";
 
   table = table + "</tr>";
 
   for (i = 0; i < dados_tabela.length; i++) {
     table = table + "<tr>";
-    table = table + "<td>" + dados[i][0] + "</td>";
-    table = table + "<td>" + dados[i][1] + "</td>";
-    table = table + "<td>" + dados[i][2] + "</td>";
-    table = table + "<td>" + dados[i][3] + "</td>";
-    table = table + "<td>" + dados[i][4] + "</td>";
+    table = table + "<td>" + dados[i][0] + "</td>"; //data
+    table = table + "<td>" + dados[i][5] + "</td>"; //n de tortas
+    table = table + "<td>" + dados[i][1] + "</td>"; //investimento
+    table = table + "<td>" + dados[i][2] + "</td>"; //retorno
+    table = table + "<td>" + dados[i][3] + "</td>"; // lucro
+    table = table + "<td>" + dados[i][4] + "</td>"; // perda
     table = table + "</tr>";
   }
 
@@ -384,3 +387,32 @@ function UpdateQuant() {
   // restante.innerHTML = contFatias - sum;
   restante.innerHTML = `${contFatias - sum} Fatias`;
 }
+
+var db_sabores = [1, 2, 3];
+var i_value = 0;
+
+function criarlista() {
+  //implementar futuramente
+  const lista_select = ["Ruby", "JavaScript", "Python", "GoLang"];
+  const lista_value = ["v1", "v2", "v3", "v4", "v5"];
+  const select = document.getElementById("select-fatias");
+
+  lista_select.forEach((item) => {
+    option = new Option(item, item.toLowerCase());
+    option.setAttribute("value", lista_value[i_value]);
+    i_value++;
+    select.options[select.options.length] = option;
+  });
+}
+
+// function calculadora()
+// {
+//   var valor1 = document.getElementById("valor1").value
+//   var valor2 = document.getElementById("valor1").value
+//   var valor3 = parseInt(valor1) + parseInt(valor2);
+//   document.getElementById("result1").value = parseInt(valor3);
+// }
+
+// setInterval(function () {
+//   calculadora();
+// }, 1500);
